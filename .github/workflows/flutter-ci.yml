@@ -31,9 +31,11 @@ jobs:
         distribution: 'zulu'
         java-version: '11'
     - name: Decrypt Android keys
-      run: sh ./.github/scripts/decrypt_android_keys.sh
-      env:
-        ANDROID_KEYS_SECRET_PASSPHRASE: ${{ secrets.ANDROID_KEYS_SECRET_PASSPHRASE }}
+      run: |
+        echo ${{ secrets.ANDROID_KEY_PROPERTIES }} > key.properties.asc
+        gpg -d --passphrase "secrets.ANDROID_KEYS_SECRET_PASSPHRASE" key.properties.asc > android/key.properties
+        echo ${{ secrets.ANDROID_RELEASE_KEY }} > test-keystore.jks.asc
+        gpg -d --passphrase "secrets.ANDROID_KEYS_SECRET_PASSPHRASE" test-keystore.jks.asc > android/test-keystore.jks
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '2.5.3'
