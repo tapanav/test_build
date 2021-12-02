@@ -25,13 +25,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
     - uses: actions/checkout@v2
-      with:
-        repository: OSIMDEV/nsk-algo-plugin
-#         token: ${{secrets.REPO_TOKEN}}
-    - uses: actions/checkout@v2
+    - uses: oleksiyrudenko/gha-git-credentials@v2.1
       with:
         token: ${{secrets.REPO_TOKEN}}
+        global: true
+#         name: 'Oleksiy Rudenko'
+#         email: 'oleksiy.rudenko@domain.com'
+#         actor: 'OleksiyRudenko'
+#         token: '${{ secrets.GL_PAT_WEB_CENTRAL }}'
+    
     - uses: actions/setup-java@v2
       with:
         distribution: 'zulu'
