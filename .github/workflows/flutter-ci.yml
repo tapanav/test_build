@@ -30,6 +30,10 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '11'
+
+    - uses: actions/labeler@v3
+      with:
+        repo-token: "${{ secrets.REPO_TOKEN }}"
     - name: Decrypt Android keys
       run: |
         echo "${{ secrets.ANDROID_KEY_PROPERTIES }}" > key.properties.asc
