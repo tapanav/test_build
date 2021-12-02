@@ -48,9 +48,9 @@ dependencies:
   permission_handler: ^8.2.5
   package_info: ^2.0.2
   http: ^0.13.3
-  flutter_blue:
-    git:
-      url: https://github.com/OSIMDEV/flutter_blue.git
+#  flutter_blue:
+#    git:
+#      url: https://github.com/OSIMDEV/flutter_blue.git
   flutter_web_auth: ^0.3.0
   connectivity_plus: ^1.0.3
   pin_code_fields: ^7.2.0
@@ -58,9 +58,9 @@ dependencies:
   network_info_plus: ^1.0.2
   provider: ^5.0.0
 # TODO: switch back to original package once the null safety patch is merged.
-  udp:
-    git:
-      url: https://github.com/tapanav/udp.git
+#  udp:
+#    git:
+#      url: https://github.com/tapanav/udp.git
   weekday_selector: ^1.0.0
   flutter_slidable: ^0.6.0
   sembast: ^3.1.0+2
@@ -71,9 +71,9 @@ dependencies:
   url_launcher: ^6.0.9
   shared_preferences: ^2.0.6
   just_audio: ^0.9.5
-  nsk_algo:
-    git:
-      url: https://github.com/OSIMDEV/nsk-algo-plugin.git
+#  nsk_algo:
+#    git:
+#      url: https://github.com/OSIMDEV/nsk-algo-plugin.git
   pdf: ^3.4.2
   share_plus: ^2.1.4
   audio_session: ^0.1.5
@@ -84,9 +84,9 @@ dependencies:
   objectbox: ^1.2.0
   objectbox_flutter_libs: any
   sleek_circular_slider: ^2.0.1
-  appcenter_flutter:
-    git:
-      url: https://github.com/OSIMDEV/appcenter-flutter-plugin.git
+#  appcenter_flutter:
+#    git:
+#      url: https://github.com/OSIMDEV/appcenter-flutter-plugin.git
   flutter_switch: ^0.3.2
   ua_client_hints: ^1.1.0
   version: ^2.0.0
