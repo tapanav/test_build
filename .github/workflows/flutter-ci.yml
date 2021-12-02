@@ -26,14 +26,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{secrets.REPO_TOKEN}}
     - uses: actions/setup-java@v2
       with:
         distribution: 'zulu'
         java-version: '11'
-
-    - uses: actions/labeler@v3
-      with:
-        repo-token: "${{ secrets.REPO_TOKEN }}"
     - name: Decrypt Android keys
       run: |
         echo "${{ secrets.ANDROID_KEY_PROPERTIES }}" > key.properties.asc
