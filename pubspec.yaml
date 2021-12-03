@@ -37,7 +37,7 @@ dependencies:
 
   nsk_algo:
     git:
-      url: https://buildbot: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@github.com/OSIMDEV/nsk-algo-plugin.git
+      url: https://tapanav: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@github.com/OSIMDEV/nsk-algo-plugin.git
 
 dev_dependencies:
   flutter_test:
