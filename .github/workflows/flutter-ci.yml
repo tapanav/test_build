@@ -40,6 +40,9 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         flutter-version: '2.5.3'
+    - name: Add token to pubspec
+      run : sed -i -e  "s|https://github.com/|https://${{ secrets.REPO_TOKEN }}@github.com/|" pubspec.yaml
+
     - run: flutter pub get
     - run: flutter build apk --build-number=${{ github.event.inputs.build_number }}
     - uses: actions/upload-artifact@v2
