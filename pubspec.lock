@@ -95,15 +95,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-  nsk_algo:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: cc539d22ed319b97fef4acd2dd3f52bec9de3b9f
-      url: "https://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@github.com/OSIMDEV/nsk-algo-plugin.git"
-    source: git
-    version: "0.0.4"
   path:
     dependency: transitive
     description:
@@ -174,4 +165,3 @@ packages:
     version: "2.1.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
-  flutter: ">=1.20.0"
