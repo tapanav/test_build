@@ -24,7 +24,7 @@ jobs:
         fetch-depth: 10
     - name: Logging
       run: |
-        echo "NOTE=`git log -10`" >> $GITHUB_ENV
+        echo "NOTE="`git log -10`"" >> $GITHUB_ENV
     - name: output
       run: |
         echo "this is release note"
