@@ -23,11 +23,10 @@ jobs:
       with:
         fetch-depth: 10
     - name: Logging
-      id: create_note
       run: |
-        echo "::set-output name=release_note::`git log -10`"
+        echo "NOTE=`git log -10`" >> $GITHUB_ENV
     - name: output
       run: |
         echo "this is release note"
-        echo "${{steps.create_note.outputs.release_note}}"
+        echo "${{env.NOTE}}"
         
