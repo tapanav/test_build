@@ -28,5 +28,5 @@ jobs:
     - name: output
       run: |
         echo "this is release note"
-        echo "${{env.NOTE}}"
+        echo "$NOTE"
         
