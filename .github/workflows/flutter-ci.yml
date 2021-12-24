@@ -61,10 +61,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: android-app
-      - name: Logging
-        id: create_note
+      - name: create_note
         run: |
-          echo "::set-output name=release_note::"`git log -10`""
+          echo 'NOTE<<EOF' >> $GITHUB_ENV
+          git log -10 >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
       - name: upload artefact to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
@@ -73,7 +74,7 @@ jobs:
           group: Collaborators
           file: app-release.apk
           notifyTesters: false
-          releaseNotes: "${{steps.create_note.outputs.release_note}}"
+          releaseNotes: "$NOTE"
           debug: false
 
 
