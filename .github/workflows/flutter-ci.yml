@@ -55,9 +55,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_android
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 10
       - uses: actions/download-artifact@v2
         with:
           name: android-app
+      - name: Logging
+        id: create_note
+        run: |
+          echo "::set-output name=release_note::"`git log -10`""
       - name: upload artefact to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
@@ -66,6 +73,7 @@ jobs:
           group: Collaborators
           file: app-release.apk
           notifyTesters: false
+          releaseNotes: "${{steps.create_note.outputs.release_note}}"
           debug: false
 
 
