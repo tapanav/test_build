@@ -74,7 +74,7 @@ jobs:
           group: Collaborators
           file: app-release.apk
           notifyTesters: false
-          releaseNotes: "$NOTE"
+          releaseNotes: "${{env.NOTE}}"
           debug: false
 
 
