@@ -20,8 +20,12 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - uses: actions/checkout@v2
-    - name: Send greeting
-      run: echo "Hello world"
     - name: Logging
+      id: create_note
       run: |
-        echo "${{toJSON(github.event)}}"
+        echo "::set-output name=release_note::`git log -10`"
+    - name: output
+      run: |
+        echo "this is release note"
+        echo ${{steps.create_note.outputs.release_note }}
+        
