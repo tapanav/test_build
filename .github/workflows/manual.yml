@@ -25,7 +25,7 @@ jobs:
     - name: Logging
       run: |
         log=`git log -10`
-        echo "NOTE=$log" >> $GITHUB_ENV
+        echo "NOTE="$log"" >> $GITHUB_ENV
     - name: output
       run: |
         echo "this is release note"
