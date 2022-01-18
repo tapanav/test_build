@@ -23,7 +23,7 @@ jobs:
       run: |
         build_num=$(( (`date +%s` - `date -d "2022-01-01" +%s`) / 86400 +100 ))
         echo $build_num
-        echo 'BUILD_NUM=$build_num' >> $GITHUB_ENV
+        echo BUILD_NUM=$build_num >> $GITHUB_ENV
         
       
     - uses: actions/checkout@v2
