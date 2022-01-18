@@ -19,6 +19,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
+    - name: build num from date
+      run: |
+        build_num=$(( (`date +%s` - `date -j "010122" +%s`) / 86400 +100 ))
+        echo $build_num
+        echo 'BUILD_NUM=$build_num' >> $GITHUB_ENV
+        
+      
     - uses: actions/checkout@v2
       with:
         fetch-depth: 10
@@ -31,4 +38,5 @@ jobs:
       run: |
         echo "this is release note"
         echo "${{env.NOTE}}"
+        echo "${{env.BUILD_NUM}}"
         
